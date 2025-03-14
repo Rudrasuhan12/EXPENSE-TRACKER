@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center text-primary">💰 Expense Tracker</h2>
+
+        <!-- Expense Form -->
+        <div class="card p-4 mt-3">
+            <h4>Add Expense</h4>
+            <input type="text" id="desc" class="form-control mb-2" placeholder="Expense Description">
+            <input type="text" id="recipient" class="form-control mb-2" placeholder="Paid To">
+            <input type="number" id="amount" class="form-control mb-2" placeholder="Amount">
+            <input type="month" id="month" class="form-control mb-2">
+            <button class="btn btn-success w-100" onclick="addExpense()">Add Expense</button>
+        </div>
+
+        <!-- Monthly Expense Summary -->
+        <div class="card p-4 mt-3">
+            <h4>Monthly Expenses</h4>
+            <select id="monthFilter" class="form-select mb-2" onchange="updateMonthlyExpenses()"></select>
+            <p>Total Expense: <strong id="monthlyTotal">$0.00</strong></p>
+            <ul id="expenseList" class="list-group"></ul>
+        </div>
+
+        <!-- Yearly Expense Summary -->
+        <div class="card p-4 mt-3">
+            <h4>Yearly Summary</h4>
+            <p>Total Yearly Expense: <strong id="yearlyTotal">$0.00</strong></p>
+        </div>
+
+        <!-- Payment History -->
+        <div class="card p-4 mt-3">
+            <h4>Payment History</h4>
+            <ul id="paymentHistory" class="list-group"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
